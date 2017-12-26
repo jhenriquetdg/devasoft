@@ -3,5 +3,11 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def index():
-  return "Hello Neuro"
+@app.route("<name>")
+def index(name=None):
+  if name==None:
+    return "Hello No one"
+  else:
+    return "Hello {}!".format(name)
+
+  
