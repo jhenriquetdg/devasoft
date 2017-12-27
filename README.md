@@ -13,6 +13,9 @@ I will focus the development towards behavioral and electrophysiological neurosc
 <h3>Methodology</h3>
 I will utilize Linux as a service, Flask, PostegreSQL, Jupyter and GitHub to create an integrative enviroment to hold Data, analysis functions, reports providing a integrated environment to develop continuous neuroscience advancements.
 
-
+<br>
+<hr>
+<br>
 Be free.
+<br>
 Zé
