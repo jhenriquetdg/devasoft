@@ -15,7 +15,6 @@ I will utilize Linux as a service, Flask, PostegreSQL, Jupyter and GitHub to cre
 
 <br>
 <hr>
-<br>
 Be free.
 <br>
 Zé
