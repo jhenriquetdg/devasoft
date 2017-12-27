@@ -1,4 +1,3 @@
-# devasoft
 <h1>Devanagari Software House</h1>
 <h2>A household of neuroscience data.</h2>
 
