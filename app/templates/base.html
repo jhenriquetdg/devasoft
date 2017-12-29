@@ -5,10 +5,21 @@
     	{% else %}
 			<title> Welcome to Microblog </title>
     	{% endif %}
-        
     </head>
     <body>
         
+        <div>
+            {% for name in so_name %}
+                <b>{{ name }}</b>    
+                <br>
+            {% endfor %}
+            
+        </div>
+
+        {# 
+            Menu here 
+        #}
+
         <div>
             Microblog: 
             <a href="{{ url_for('index') }}"> Home </a>
@@ -16,6 +27,10 @@
         </div>
 
         <hr>
+
+        {# 
+            Error block here 
+        #}
 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -27,10 +42,23 @@
                 <hr>  
             {% endif %}    
         {% endwith %}
-        
-        
+
+        {# 
+            Body of website  here 
+        #}
 
         {% block content %} {% endblock %}
-        
+
+        {# 
+            Footer of website  here 
+        #}
+
+        <br>
+        <div>
+            
+            Foot
+
+        </div>
+
     </body>
 </html>

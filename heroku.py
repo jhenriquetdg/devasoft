@@ -4,23 +4,25 @@ from app.models import User, Post
 from mixer.backend.flask import mixer
 
 
-def tb_print(Table=[]):
+def tb_print(Table=None):
     """
         Generic Table Printer
     """
-    contents = Table.query.all()
-    for c, content in enumerate(contents):
-        print('#', 'Number', '\t', 'Entry')
-        print('#', c, '\t', content)
+    if Table:
+        contents = Table.query.all()
+        for c, content in enumerate(contents):
+            print('#', 'Number', '\t', 'Entry')
+            print('#', c, '\t', content)
 
 
-def tb_wipe(Table=[]):
+def tb_wipe(Table=None):
     """
         Generic Table Wiper
     """
-    contents = Table.query.all()
-    for content in contents:
-        db.session.delete(content)
+    if Table:
+        contents = Table.query.all()
+        for content in contents:
+            db.session.delete(content)
 
 
 def populate(db=db, app=app):
