@@ -8,7 +8,7 @@ import sys
 
 
 translator      = Translator()
-translation_dir = "/home/zetdg/Devasoft/devablog/app/translations"
+translation_dir = "./app/translations"
 
 lang_dir = sys.argv;
 #lang_dir = os.listdir(translation_dir)
@@ -23,7 +23,7 @@ for f,lang_acronyms in enumerate(lang_dir):
     message_file = os.path.join(translation_dir,lang_acronyms,'LC_MESSAGES/messages.po')
 
 
-    print(str(f) + ' of ' + str(len(lang_dir)),lang_acronyms,message_file)
+    print(str(f+1) + ' of ' + str(len(lang_dir)),lang_acronyms,message_file)
     
     if not os.path.isfile(message_file):
         print("\tFile {} doesn't exist".format(message_file))
@@ -68,12 +68,12 @@ for f,lang_acronyms in enumerate(lang_dir):
             
             Splitted    = re.split("(\%\(.+?\)s)",source_text)
             #TagName     = re.findall("(\%\(.+?\)s)",source_text)
-            Dummy       = re.sub("(\%\(.+?\)s)","_@@_",source_text)
+            Dummy       = re.sub("(\%\(.+?\)s)","_@ZWWZ@_",source_text)
 
             Translated          = translator.translate(Dummy, dest=lang_acronyms)
             Translated          = Translated.text
 
-            SplittedTranslation = re.split("(_\s*@@\s*_)",Translated)
+            SplittedTranslation = re.split("(_\s*@.+?ZWWZ.+?@\s*_)",Translated)
 
             translated_text = []
             for c,chunk in enumerate(Splitted):
